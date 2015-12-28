@@ -1,0 +1,35 @@
+== Structure ==
+
+=== Core ===
+
+The core has 3 tasks: 
+
+  # Set up the graphical environment
+  # Set up the video input
+  # Process each frame of the video
+
+This all takes place inside the {{{main.cpp}}} file. 
+
+=== Processor ===
+
+The processor is in charge of setting up the correct sampler and one or more analyzers. Each iteration of the processor includes analyzing on or more samples given by the sampler and then calculating its final score. The processor quits when no more samples for a frame are given by the sampler. 
+
+=== Sampler ===
+
+The sampler both generates and determines the final score of the sample. The process of generating samples is over when the sampler returns no sample to be analyzed. The best sample for a particular frame is kept track of by the sampler as well. 
+
+=== Analyzer ===
+
+Analyzers are responsible for determining the score of a sample. Several analyzers can be used together and it is up to the sampler to merge the scores from multiple analyzers together. 
+
+=== Video ===
+
+The Video class is responsible for furnishing frames of a movie to the rest of FT. A frame is expected to be in a fixed sized matrix where elements are RGB colors. 
+
+=== GUI ===
+
+Responsible for creating not only the graphical window but also controlling the rendering of images which may or may not be part of the UI.
+
+=== Utility ===
+
+A few helping functions are offered. Most important being image warping. An SDL and OpenGL version are included. 

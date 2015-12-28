@@ -1,0 +1,27 @@
+== Requirements ==
+
+  * FFMPEG: http://ffmpeg.org/index.html 
+  * Eigen: http://eigen.tuxfamily.org/
+  * OpenGL & Glut
+
+Hint: Don't forget that you need libswscale which is technically part of ffmpeg but not included in their main svn repository.
+
+Hint: Eigen is just a set of header files so no compiling is necessary. 
+
+== Linux ==
+
+Simply run the usual Linux set of commands bellow. Note that you will most likely have to specify where your libraries were installed when running {{{./configure}}}
+
+{{{
+./configure
+make all
+}}}
+
+This will create an executable called inside the src folder. Move it to the root directory and you are ready to run. 
+{{{
+./ft
+}}}
+
+== Mac ==
+
+Just open the XCode project. The library paths for the most part will work without any changes. FFMPEG is suggested to be installed via Fink and that path must be set manually.
